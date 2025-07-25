@@ -66,4 +66,7 @@ def find_t(directory, keywords):
 if __name__ == "__main__":
     keywords_to_search = ["standard", "public", "mission"]
     results = find_t("files", keywords_to_search)
-    print("Search results:", results)
+
+    for keyword, paths in results.items():
+        print(f"{keyword}: {paths}")
+    # print("Search results:", results)
