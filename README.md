@@ -28,3 +28,17 @@ python find-with-threading.py
 ```
 find files -name "*.txt" -exec grep -H "mission" {} \; | wc -l
 ```
+
+## clean cache
+
+run as root
+
+```
+sync && echo 3 > /proc/sys/vm/drop_caches
+```
+
+run via sudo
+
+```
+sudo sync && sudo sh -c "echo 3 > /proc/sys/vm/drop_caches"
+```

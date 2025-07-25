@@ -3,7 +3,7 @@ import os
 
 fake = Faker()
 
-num_files = 1000
+num_files = 100000
 output_dir = "files"
 os.makedirs(output_dir, exist_ok=True)
 
