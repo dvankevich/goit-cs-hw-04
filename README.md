@@ -42,3 +42,9 @@ run via sudo
 ```
 sudo sync && sudo sh -c "echo 3 > /proc/sys/vm/drop_caches"
 ```
+
+## show process tree
+
+```
+pstree -p $(pgrep -f find-with-threading.py)
+```
