@@ -38,7 +38,7 @@ def find_t(directory, keywords):
     ]
 
     # split file list
-    num_threads = 4
+    num_threads = 2
     chunk_size = len(files) // num_threads
     threads = []
     results = {}
@@ -67,6 +67,6 @@ if __name__ == "__main__":
     keywords_to_search = ["standard", "public", "mission"]
     results = find_t("files", keywords_to_search)
 
-    for keyword, paths in results.items():
-        print(f"{keyword}: {paths}")
-    # print("Search results:", results)
+    # for keyword, paths in results.items():
+    #     print(f"{keyword}: {paths}")
+    print("Search results:", results)

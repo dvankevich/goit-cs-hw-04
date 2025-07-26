@@ -36,9 +36,9 @@ def find_m(directory, keywords):
         if os.path.isfile(os.path.join(directory, f))
     ]
 
-    # num_processes = os.cpu_count()
-    num_processes = 4
-    print("CPU count:", num_processes)
+    num_processes = os.cpu_count()
+    # num_processes = 4
+    # print("CPU count:", num_processes)
     chunk_size = len(file_paths) // num_processes + 1
     file_chunks = [
         file_paths[i : i + chunk_size] for i in range(0, len(file_paths), chunk_size)
@@ -63,10 +63,10 @@ if __name__ == "__main__":
     keywords = ["standard", "public", "mission"]
     results = find_m(directory, keywords)
 
-    for keyword, paths in results.items():
-        print(f"{keyword}: {paths} len: {len(paths)}")
+    # for keyword, paths in results.items():
+    #     print(f"{keyword}: {paths} len: {len(paths)}")
 
     # for results check run
     # find files -name "*.txt" -exec grep -H "mission" {} \; | wc -l
 
-    # print("Search results:", results)
+    print("Search results:", results)
