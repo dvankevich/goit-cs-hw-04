@@ -1,6 +1,7 @@
 import threading
 import os
 import logging
+import time
 
 # debug_mode = True
 debug_mode = False
@@ -65,8 +66,14 @@ def find_t(directory, keywords):
 
 if __name__ == "__main__":
     keywords_to_search = ["standard", "public", "mission"]
+
+    start_time = time.time()
     results = find_t("files", keywords_to_search)
+    end_time = time.time()
 
     # for keyword, paths in results.items():
     #     print(f"{keyword}: {paths}")
     print("Search results:", results)
+
+    execution_time = end_time - start_time
+    print(f"Execution time: {execution_time:.2f} seconds")

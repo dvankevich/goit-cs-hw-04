@@ -1,5 +1,6 @@
 import os
 from multiprocessing import Pool, Manager
+import time
 
 
 def search_keywords_in_file(file_path, keywords):
@@ -59,9 +60,12 @@ def find_m(directory, keywords):
 
 
 if __name__ == "__main__":
-    directory = "files"
+
     keywords = ["standard", "public", "mission"]
-    results = find_m(directory, keywords)
+
+    start_time = time.time()
+    results = find_m("files", keywords)
+    end_time = time.time()
 
     # for keyword, paths in results.items():
     #     print(f"{keyword}: {paths} len: {len(paths)}")
@@ -70,3 +74,6 @@ if __name__ == "__main__":
     # find files -name "*.txt" -exec grep -H "mission" {} \; | wc -l
 
     print("Search results:", results)
+
+    execution_time = end_time - start_time
+    print(f"Execution time: {execution_time:.2f} seconds")
